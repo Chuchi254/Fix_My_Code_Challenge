@@ -1,15 +1,26 @@
 #!/usr/bin/python3
+"""
+The module defines a Square class and demonstrates its usage.
+"""
 
-class square:   
+
+class Square:
+    """A Class used to represent a square"""
+
     def __init__(self, *args, **kwargs):
+        """
+        Inititalize the square with optional width and height parameters.
+        """
+        self.width = 0
+        self.height = 0
         for key, value in kwargs.items():
             setattr(self, key, value)
 
     def area_of_my_square(self):
-        """ Area of the square """
+        """ Area of the Square """
         return self.width * self.width
 
-    def PermiterOfMySquare(self):
+    def permiter_of_my_square(self):
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
@@ -17,7 +28,7 @@ class square:
 
 if __name__ == "__main__":
 
-    s = square(width=12, height=9)
+    s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
-    print(s.PermiterOfMySquare())
+    print(s.permiter_of_my_square())
